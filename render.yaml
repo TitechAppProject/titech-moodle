@@ -1,0 +1,37 @@
+services:
+  - type: web
+    name: titech-moodle
+    env: docker
+    plan: free
+    envVars:
+      - key: DB_HOST
+        fromDatabase:
+          name: moodleDB
+          property: host
+      - key: DB_NAME
+        fromDatabase:
+          name: moodleDB
+          property: database
+      - key: DB_USER
+        fromDatabase:
+          name: moodleDB
+          property: user
+      - key: DB_PASS
+        fromDatabase:
+          name: moodleDB
+          property: password
+      - key: DB_PORT
+        fromDatabase:
+          name: moodleDB
+          property: port
+      - key: WWWROOT
+        fromService:
+          name: moodle
+          type: web
+          envVarKey: RENDER_EXTERNAL_URL
+
+databases:
+  - name: titech-moodle-db
+    plan: free
+    databaseName: moodle
+    user: moodle
