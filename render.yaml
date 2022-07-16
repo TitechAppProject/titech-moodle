@@ -6,27 +6,27 @@ services:
     envVars:
       - key: DB_HOST
         fromDatabase:
-          name: moodleDB
+          name: titech-moodle-db
           property: host
       - key: DB_NAME
         fromDatabase:
-          name: moodleDB
+          name: titech-moodle-db
           property: database
       - key: DB_USER
         fromDatabase:
-          name: moodleDB
+          name: titech-moodle-db
           property: user
       - key: DB_PASS
         fromDatabase:
-          name: moodleDB
+          name: titech-moodle-db
           property: password
       - key: DB_PORT
         fromDatabase:
-          name: moodleDB
+          name: titech-moodle-db
           property: port
       - key: WWWROOT
         fromService:
-          name: moodle
+          name: titech-moodle
           type: web
           envVarKey: RENDER_EXTERNAL_URL
 
