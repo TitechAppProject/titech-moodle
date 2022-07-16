@@ -2,7 +2,7 @@ services:
   - type: web
     name: titech-moodle
     env: docker
-    plan: free
+    plan: starter
     envVars:
       - key: DB_HOST
         fromDatabase:
@@ -29,6 +29,9 @@ services:
           name: titech-moodle
           type: web
           envVarKey: RENDER_EXTERNAL_URL
+    disk:
+      name: moodledata
+      mountPath: /var/www/moodledata
 
 databases:
   - name: titech-moodle-db
