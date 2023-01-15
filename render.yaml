@@ -35,6 +35,6 @@ services:
 
 databases:
   - name: titech-moodle-db
-    plan: free
+    plan: starter
     databaseName: moodle
     user: moodle
